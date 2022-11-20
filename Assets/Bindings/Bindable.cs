@@ -107,7 +107,7 @@ namespace Pooffick.Bindings
                     throw new ArgumentException($"Control named '{property}' not found.");
                 component = control.GetComponent<TMP_Dropdown>();
                 if (component == null)
-                    throw new ArgumentException($"Control named '{property}' does not contain TMP_InputField component.");
+                    throw new ArgumentException($"Control named '{property}' does not contain TMP_Dropdown component.");
             }
 
             _bindings.Add(new ControlBindings.Dropdown.ValueBinding(component, this, property, mode));
@@ -163,7 +163,7 @@ namespace Pooffick.Bindings
                     throw new ArgumentException($"Control named '{property}' not found.");
                 component = control.GetComponent<Slider>();
                 if (component == null)
-                    throw new ArgumentException($"Control named '{property}' does not contain TMP_InputField component.");
+                    throw new ArgumentException($"Control named '{property}' does not contain Slider component.");
             }
 
             _bindings.Add(new ControlBindings.Slider.ValueBinding(component, this, property, mode));
