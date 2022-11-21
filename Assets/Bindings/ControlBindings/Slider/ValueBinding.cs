@@ -20,6 +20,7 @@ namespace Pooffick.Bindings.ControlBindings.Slider
         protected override void Disposing()
         {
             _owner.PropertyChanged -= OnPropertyChanged;
+            _slider.onValueChanged.RemoveListener(OnValueChanged);
         }
 
         private void OnPropertyChanged(PropertyChangedEventArgs e)

@@ -8,10 +8,13 @@ namespace Pooffick.Bindings.ControlBindings
         protected readonly Bindable _owner;
         protected readonly PropertyInfo _propertyInfo;
 
+        public readonly string Property;
+
         public ControlBinding(Bindable owner, string property)
         {
             _owner = owner;
             _propertyInfo = GetPropertyInfo(owner, property);
+            Property = property;
         }
 
         public void Dispose()

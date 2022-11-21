@@ -23,6 +23,7 @@ namespace Pooffick.Bindings.ControlBindings.Dropdown
         protected override void Disposing()
         {
             _owner.PropertyChanged -= OnPropertyChanged;
+            _dropdown.onValueChanged.RemoveListener(OnValueChanged);
         }
 
         private void OnPropertyChanged(PropertyChangedEventArgs e)

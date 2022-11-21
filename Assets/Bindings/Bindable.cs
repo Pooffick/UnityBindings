@@ -185,6 +185,22 @@ namespace Pooffick.Bindings
             _bindings.Add(new ControlBindings.Slider.MaxValueBinding(control, this, property));
         }
 
+        protected void RemoveBinding(string property)
+        {
+            var toRemove = new List<ControlBinding>();
+            foreach (ControlBinding binding in _bindings)
+            {
+                if (binding.Property == property)
+                    toRemove.Add(binding);
+            }
+
+            foreach (ControlBinding binding in toRemove)
+            {
+                _bindings.Remove(binding);
+                binding.Dispose();
+            }
+        }
+
         #endregion
 
         private void OnDestroy()
